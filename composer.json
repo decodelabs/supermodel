@@ -2,23 +2,31 @@
     "name": "decodelabs/supermodel",
     "description": "General data model interfaces for a simpler life",
     "type": "library",
-    "keywords": [],
+    "keywords": [ ],
     "license": "MIT",
-    "authors": [{
-        "name": "Tom Wright",
-        "email": "tom@inflatablecookie.com"
-    }],
+    "authors": [ {
+            "name": "Tom Wright",
+            "email": "tom@inflatablecookie.com"
+        } ],
     "require": {
         "php": "^8.4",
-        "decodelabs/exceptional": "^0.6.7"
+
+        "decodelabs/archetype": "^0.4.2",
+        "decodelabs/exceptional": "^0.6.7",
+        "decodelabs/kingdom": "^0.2.0",
+        "decodelabs/slingshot": "^0.3.5",
+        "decodelabs/coercion": "^0.3.5"
     },
     "require-dev": {
         "decodelabs/phpstan-decodelabs": "^0.7.0"
     },
     "autoload": {
         "psr-4": {
-            "DecodeLabs\\Supermodel\\": "src/"
-        }
+            "DecodeLabs\\Supermodel\\": "src/Supermodel/"
+        },
+        "classmap": [
+            "src/Supermodel.php"
+        ]
     },
     "extra": {
         "branch-alias": {
