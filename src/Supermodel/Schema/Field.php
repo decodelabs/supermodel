@@ -47,14 +47,22 @@ class Field
             );
         }
 
-        if (
-            $this->type === FieldType::Object &&
-            $value !== null &&
-            $this->objectClass !== null &&
-            is_object($value) &&
-            !is_a($value, $this->objectClass)
-        ) {
-            return $this->hydrateObject($value);
+
+        if ($this->type === FieldType::Object) {
+            if (
+                $value !== null &&
+                $this->objectClass !== null &&
+                (
+                    !is_object($value) ||
+                    !is_a($value, $this->objectClass)
+                )
+            ) {
+                return $this->hydrateObject($value);
+            }
+
+            throw Exceptional::UnexpectedValue(
+                message: 'Value for field ' . $this->name . ' is not an object',
+            );
         }
 
         return $value;
