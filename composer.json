@@ -2,7 +2,7 @@
     "name": "decodelabs/supermodel",
     "description": "General data model interfaces for a simpler life",
     "type": "library",
-    "keywords": [],
+    "keywords": [ ],
     "license": "MIT",
     "authors": [
         {
@@ -20,7 +20,7 @@
         "decodelabs/coercion": "^0.3.5"
     },
     "require-dev": {
-        "decodelabs/chorus": "^0.1",
+        "decodelabs/chorus": ">0",
         "decodelabs/phpstan-decodelabs": "^0.7.0"
     },
     "autoload": {
